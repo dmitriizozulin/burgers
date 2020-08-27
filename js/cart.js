@@ -52,6 +52,25 @@ export default class Cart {
       this.rootElem.classList.toggle('visible');
       this.buttonElem.classList.toggle('invisible');
     });
+
+    const cartItems = this.rootElem.querySelectorAll('.cart-item');
+    cartItems.forEach(item => {
+      item.addEventListener('click', e => {
+        const { id, type } = e.currentTarget.dataset;
+        const curItem = this.cartItems[id + type];
+        const target = e.target.closest('.cart-item-button');
+        if (target.dataset.action === 'increment') {
+          curItem.quantity += 1;
+        } else if (target.dataset.action === 'decrement') {
+          if (curItem.quantity === 1) {
+            delete this.cartItems[id + type];
+          } else {
+            curItem.quantity -= 1;
+          }
+        }
+        this._render();
+      });
+    });
   }
 
   add(item) {
