@@ -7,7 +7,7 @@ export default class CartItem {
   render() {
     const { title, price, weight, imgname, imgalt, type, quantity, id } = this.item;
     return `<li class="cart-item" data-id="${id}" data-type="${type}">
-        <img class="cart-item-img" src="assets/images/${imgname}" alt="${imgalt}" />
+        <img class="cart-item-img" src="https://dmitriizozulin.github.io/burgers/assets/images/${imgname}" alt="${imgalt}" />
         <div class="cart-item-data">
           <h2 class="cart-item-title">${title}</h2>
           <p class="cart-item-info">${price} - ${weight}</p>
