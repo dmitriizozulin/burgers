@@ -13,7 +13,7 @@ export default class MenuItem {
     }" data-imgAlt="${item['img-alt']}" data-price="${item['price']}" data-weight="${item['weight']}" data-type="${
       item['type']
     }">
-        <img class="item-img" src="/assets/images/${item['img-name']}" alt="${item['img-alt']}" />
+        <img class="item-img" src="https://dmitriizozulin.github.io/burgers/assets/images/${item['img-name']}" alt="${item['img-alt']}" />
         <div class="item-data">
           <h2 class="item-title">${item['title']}</h2>
           ${
